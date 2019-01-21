@@ -1,7 +1,13 @@
 % Used to rebin datasets into larger bins.
+% inputfile and outputfile are file name strings
+% binsperbin is the number of bins to be shrunk into a single bin
+% skiplines is the number of header lines at the top of the file that need to be ignored.
 
-function ReBin(inputfile,outputfile,binsperbin)
-    w=dlmread(inputfile,'',2,0);
+function ReBin(inputfile,outputfile,binsperbin,skiplines)
+% ADDME Rebins datasets
+% 
+% ReBin(Input file string,Output file string,Old bins per new bin,Header ines to skip)
+    w=dlmread(inputfile,'',skiplines,0);
     t=w(:,1);
     I=w(:,2);
     n=ceil(length(t)/binsperbin);
