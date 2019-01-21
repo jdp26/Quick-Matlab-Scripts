@@ -9,7 +9,7 @@ function ReBin(inputfile,outputfile,binsperbin)
     I2=zeros(n+1,1);
     for(j=1:length(t))
         x=ceil(j/binsperbin)+1;
-        I2(x)=I2(x)+I(j);
+        I2(x)=I2(x)+I(j)/binsperbin;
     end
     for(k=1:length(t2))
         t2(k+1)=k*binsperbin*t(1);
