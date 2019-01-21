@@ -17,7 +17,7 @@ function ReBin(inputfile,outputfile,binsperbin,skiplines)
         x=ceil(j/binsperbin)+1;
         I2(x)=I2(x)+I(j)/binsperbin;
     end
-    for(k=1:length(t2))
+    for(k=1:(length(t2)-1))
         t2(k+1)=k*binsperbin*t(1);
     end
     newArray=zeros(n+1,2);
